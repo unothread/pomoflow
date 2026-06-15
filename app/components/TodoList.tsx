@@ -44,6 +44,10 @@ export default function TodoList() {
   const remaining = todos.filter((t) => !t.done).length;
   const done = todos.length - remaining;
 
+  // Display order only: completed items sink to the bottom. Stable sort keeps
+  // each group in its original (storage) order, so toggling preserves place.
+  const ordered = [...todos].sort((a, b) => Number(a.done) - Number(b.done));
+
   return (
     <section className="bg-card border-card-border p-4 sm:p-8 shadow-sm h-full flex flex-col overflow-hidden transition-colors duration-500" style={{ borderRadius: 'var(--radius-card)', borderWidth: '1px' }}>
       <header className="flex items-center justify-between mb-2 sm:mb-4 shrink-0">
@@ -87,7 +91,7 @@ export default function TodoList() {
           </div>
         ) : (
           <ul className="space-y-1 pb-2">
-            {todos.map((tItem) => (
+            {ordered.map((tItem) => (
               <li
                 key={tItem.id}
                 className="flex items-center gap-3 group px-3 py-2.5 hover:bg-background/50 transition-colors"
