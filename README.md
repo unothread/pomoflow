@@ -13,7 +13,7 @@ Next.js 16 (App Router) + React 19 + Tailwind v4 ile yazıldı.
   - Tarayıcı bildirimi (opsiyonel).
 - **Lofi radyo** — YouTube IFrame API ile gizli (0×0) iframe. Sayfa düzeni
   bozulmadan arka planda çalar. Varsayılan: Lofi Girl — beats to relax/study to
-  (`jfKfPfyJRdk`). Ses seviyesi ayarı, farklı video/canlı yayın ID desteği.
+  (`X4VbdwhkE10`). Ses seviyesi ayarı, farklı video/canlı yayın ID desteği.
 - **Yapılacaklar** — ekle / tamamla / sil, "tamamlananları temizle".
 - **Reklam alanları** — `AdBanner` component'i ile 4 hazır slot:
   `top` (leaderboard, üst), `inline` (leaderboard, içerik altı),

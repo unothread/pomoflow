@@ -5,7 +5,7 @@ import { useLocalStorage } from "../lib/useLocalStorage";
 
 const STREAM_KEY = "pomoflow.lofi.videoId.v1";
 const VOLUME_KEY = "pomoflow.lofi.volume.v1";
-const DEFAULT_VIDEO_ID = "jfKfPfyJRdk"; // lofi girl - beats to relax/study to
+const DEFAULT_VIDEO_ID = "X4VbdwhkE10"; // lofi girl - beats to relax/study to
 
 // YouTube IFrame API types (minimal).
 declare global {
@@ -236,7 +236,7 @@ export default function LofiPlayer() {
           </button>
         </div>
         <p className="mt-1 text-[11px] text-zinc-400">
-          Örn: <code className="font-mono">jfKfPfyJRdk</code> — Lofi Girl
+          Örn: <code className="font-mono">X4VbdwhkE10</code> — Lofi Girl
         </p>
       </details>
 
