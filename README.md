@@ -5,7 +5,7 @@ Next.js 16 (App Router) + React 19 + Tailwind v4 ile yazıldı.
 
 ## Özellikler
 
-- **Pomodoro zamanlayıcı** — ayarlanabilir odak / kısa mola / uzun mola süreleri.
+- **Pomodoro zamanlayıcı** — ayarlanabilir odak / kısa mola / uzun mola süreleri..
   - X kısa moladan sonra 1 uzun mola (varsayılan 4).
   - Başlat / Duraklat / Devam et / Atla / Sıfırla.
   - Otomatik başlatma (seans bitince sonrakini başlatır).
