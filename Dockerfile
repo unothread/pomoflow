@@ -7,9 +7,9 @@
 FROM node:20-bookworm-slim AS deps
 WORKDIR /app
 
-# libc6-compat is needed by sharp/esbuild on Debian-slim.
+# ca-certificates is needed for HTTPS fetches during build.
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends libc6-compat ca-certificates \
+  && apt-get install -y --no-install-recommends ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
 COPY package.json package-lock.json* ./
@@ -22,7 +22,7 @@ FROM node:20-bookworm-slim AS builder
 WORKDIR /app
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends libc6-compat ca-certificates \
+  && apt-get install -y --no-install-recommends ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -41,7 +41,7 @@ FROM node:20-bookworm-slim AS runner
 WORKDIR /app
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends libc6-compat ca-certificates curl \
+  && apt-get install -y --no-install-recommends ca-certificates curl \
   && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
