@@ -75,6 +75,10 @@ type State = {
   phase: Phase;
   running: boolean;
   endsAt: number | null;
+  // Remaining ms frozen at the moment of pause. While paused, endsAt is
+  // cleared and this is the source of truth so the wall clock advancing
+  // during the pause does not eat into the session.
+  pausedRemaining: number | null;
   completedFocus: number;
 };
 
@@ -95,6 +99,7 @@ const INITIAL: State = {
   phase: "idle",
   running: false,
   endsAt: null,
+  pausedRemaining: null,
   completedFocus: 0,
 };
 
@@ -105,19 +110,39 @@ function reducer(state: State, action: Action): State {
         ...state,
         phase: action.kind,
         endsAt: action.endsAt,
+        pausedRemaining: null,
         running: true,
       };
-    case "pause":
-      return { ...state, running: false };
+    case "pause": {
+      // Freeze the remaining time and drop the absolute deadline so the
+      // paused interval is not counted against the session on resume.
+      const pausedRemaining =
+        state.endsAt === null
+          ? state.pausedRemaining
+          : Math.max(0, state.endsAt - Date.now());
+      return { ...state, running: false, endsAt: null, pausedRemaining };
+    }
     case "resume":
-      return { ...state, endsAt: action.endsAt, running: true };
+      return {
+        ...state,
+        endsAt: action.endsAt,
+        pausedRemaining: null,
+        running: true,
+      };
     case "reset":
-      return { ...state, phase: "idle", running: false, endsAt: null };
+      return {
+        ...state,
+        phase: "idle",
+        running: false,
+        endsAt: null,
+        pausedRemaining: null,
+      };
     case "advance":
       return {
         ...state,
         phase: action.nextPhase,
         endsAt: action.endsAt,
+        pausedRemaining: null,
         running: action.running,
         completedFocus: action.newCompleted,
       };
@@ -188,11 +213,14 @@ export default function PomodoroTimer() {
     }
   }, [state.completedFocus, persistedCompleted, setPersistedCompleted]);
 
-  // Derived values (pure).
-  const remainingMs =
-    state.phase === "idle" || state.endsAt === null
-      ? sessionDurationMs("focus", settings)
-      : Math.max(0, state.endsAt - now);
+  // Derived values (pure). While paused, endsAt is null and pausedRemaining
+  // holds the frozen time; while running we count down from the deadline.
+  function deriveRemainingMs(): number {
+    if (state.phase === "idle") return sessionDurationMs("focus", settings);
+    if (state.endsAt !== null) return Math.max(0, state.endsAt - now);
+    return state.pausedRemaining ?? sessionDurationMs(state.phase, settings);
+  }
+  const remainingMs = deriveRemainingMs();
 
   const totalMs =
     state.phase === "idle"
@@ -292,9 +320,7 @@ export default function PomodoroTimer() {
       dispatch({ type: "pause" });
     } else {
       const remaining =
-        state.endsAt === null
-          ? sessionDurationMs(state.phase, settings)
-          : Math.max(0, state.endsAt - Date.now());
+        state.pausedRemaining ?? sessionDurationMs(state.phase, settings);
       dispatch({ type: "resume", endsAt: Date.now() + remaining });
     }
   }
