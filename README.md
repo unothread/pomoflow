@@ -1,97 +1,92 @@
 # Pomoflow
 
-Sade, mobil uyumlu, tek sayfa Pomodoro + Lofi radyo + Yapılacaklar uygulaması.
-Next.js 16 (App Router) + React 19 + Tailwind v4 ile yazıldı.
+A free, minimal Pomodoro timer with a built-in to-do list and lofi radio. Pick your focus and break lengths, add your tasks, hit start, and work to lofi. Everything runs locally in the browser — no account, no backend, your data stays in your browser.
 
-## Özellikler
+Live: [pomodoro.ozgurpolat.net](https://pomodoro.ozgurpolat.net)
 
-- **Pomodoro zamanlayıcı** — ayarlanabilir odak / kısa mola / uzun mola süreleri..
-  - X kısa moladan sonra 1 uzun mola (varsayılan 4).
-  - Başlat / Duraklat / Devam et / Atla / Sıfırla.
-  - Otomatik başlatma (seans bitince sonrakini başlatır).
-  - Sekme gizliyken otomatik duraklatma (drift önleme).
-  - Tarayıcı bildirimi (opsiyonel).
-- **Lofi radyo** — YouTube IFrame API ile gizli (0×0) iframe. Sayfa düzeni
-  bozulmadan arka planda çalar. Varsayılan: Lofi Girl — beats to relax/study to
-  (`X4VbdwhkE10`). Ses seviyesi ayarı, farklı video/canlı yayın ID desteği.
-- **Yapılacaklar** — ekle / tamamla / sil, "tamamlananları temizle".
-- **Reklam alanları** — `AdBanner` component'i ile 4 hazır slot:
-  `top` (leaderboard, üst), `inline` (leaderboard, içerik altı),
-  `sidebar` (medium, sağ kolon), `footer` (leaderboard, alt).
-  Her biri `data-ad-slot` ve `data-ad-size` ile etiketli; gerçek ağ
-  markup'ı (AdSense, Carbon, Ezoic vb.) component'in içindeki placeholder
-  div'i değiştirilerek bağlanır.
+## Features
 
-Tüm kullanıcı verisi (`ayarlar`, `todo listesi`, `lofi video ID`, `ses seviyesi`,
-`tamamlanan odak sayısı`) `localStorage`'da saklanır — sunucu tarafı gerektirmez.
+- **Customizable Pomodoro cycle** — set focus, short break, and long break durations, plus how many focus sessions run before a long break.
+- **Auto-start** — optionally chain sessions automatically; an alarm plays when each one ends.
+- **Alarm sounds** — five selectable alarms with preview.
+- **Tab-title countdown** — remaining time shows in the browser tab, so you can switch away and still keep an eye on it.
+- **To-do list** — add, complete, and clear tasks for your session.
+- **Lofi radio** — background music player to focus to.
+- **Light / dark theme**.
+- **Bilingual UI** — English (default) and Turkish.
+- **Local-first** — settings, todos, theme, and language persist in `localStorage`. Nothing leaves the device.
+- **SEO-ready** — metadata, Open Graph / Twitter cards, `sitemap.ts`, and `robots.ts` built in.
 
-## Çalıştırmak
+## Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router, `output: "standalone"`)
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- Google Analytics 4 via `@next/third-parties` (optional)
+
+## Getting started
 
 ```bash
 npm install
-npm run dev          # geliştirme: http://localhost:3000
+npm run dev
 ```
 
-Üretim:
+Open [http://localhost:3000](http://localhost:3000).
+
+### Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
+
+## Environment variables
+
+Both are optional — the app runs without an `.env` file. Copy them into `.env.local` to override. Both are `NEXT_PUBLIC_*`, so they are exposed to the browser; do not put secrets here.
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `https://pomodoro.ozgurpolat.net` | Canonical site URL. Single source of truth for metadata, canonical/OG tags, sitemap, and robots. Set per environment, no trailing slash. |
+| `NEXT_PUBLIC_GA_ID` | unset | Google Analytics 4 Measurement ID. Leave unset to disable analytics. |
+
+Example `.env.local`:
 
 ```bash
-npm run build
-npm start
+NEXT_PUBLIC_SITE_URL=https://example.com
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
-Lint:
-
-```bash
-npm run lint
-```
-
-## Deploy
-
-Standart Next.js app olduğu için herhangi bir Node 20+ host'a (Vercel,
-Coolify, kendi sunucun) doğrudan deploy edilebilir. `next build` çıktısı
-`.next/` klasöründe durur.
-
-Vercel için:
-
-```bash
-npx vercel
-```
-
-### Coolify (Dockerfile)
-
-Repo kökündeki `Dockerfile` Coolify'nin "Dockerfile" build pack'i ile
-birebir uyumlu. `next.config.ts` `output: "standalone"` kullandığı için
-final image ~150 MB civarında.
-
-Coolify'da yapman gereken tek şey:
-
-1. **New Resource → Application** → "Public/Private Repository (with
-   Dockerfile)" seç, `unothread/pomoflow` repo'sunu bağla.
-2. **Build Pack**: `Dockerfile` (default).
-3. **Port**: `3000` (Coolify genelde Dockerfile'ın `EXPOSE`'unu okur,
-   yine de kontrol et).
-4. **Healthcheck Path**: `/` (opsiyonel, Dockerfile'da `curl` ile yaptım).
-5. **Environment Variables**: gerekmez — tüm ayarlar tarayıcıda
-   `localStorage`'da tutuluyor.
-6. **Domain**: istediğin subdomain'i bağla, HTTPS Coolify'dan otomatik.
-
-Coolify repo'yu ilk build'de klonlarken Docker context'in şişmemesi
-için `.dockerignore` eklendi (`node_modules`, `.next/`, `.git/` vb.).
-
-## Yapı
+## Project structure
 
 ```
 app/
-  layout.tsx                 # kök layout, metadata, viewport
-  page.tsx                   # tek sayfa düzeni
-  globals.css                # Tailwind v4 import + tema
-  components/
-    AdBanner.tsx             # placeholder reklam alanı
-    LofiPlayer.tsx           # YouTube IFrame API client
-    PomodoroTimer.tsx        # pomodoro state machine (useReducer)
-    SettingsPanel.tsx        # süre + döngü ayarları
-    TodoList.tsx             # ekle/tamamla/sil
+  layout.tsx              Root layout, metadata, fonts, GA
+  page.tsx                Server entry
+  HomeClient.tsx          Client app shell
+  robots.ts, sitemap.ts   SEO routes
+  components/             PomodoroTimer, TodoList, LofiPlayer,
+                          SettingsPanel, HeaderControls, LandingSEO
   lib/
-    useLocalStorage.ts       # SSR-safe localStorage hook
-    types.ts                 # tipler + varsayılan ayarlar
+    site.ts               Canonical URL + OG image config
+    i18n.tsx              TR/EN translations + provider
+    theme.tsx             Light/dark theme provider
+    alarms.ts             Alarm sound registry
+    types.ts              Settings, session, todo types + defaults
+    useLocalStorage.ts    SSR-safe localStorage hook
+public/
+  logo.svg
+  sounds/alarms/          alarm1–5.mp3
 ```
+
+## Customizing
+
+- **Default timer settings** — edit `DEFAULT_SETTINGS` in [`app/lib/types.ts`](app/lib/types.ts).
+- **Add an alarm sound** — follow the steps documented in [`app/lib/alarms.ts`](app/lib/alarms.ts): add the id to `AlarmId`, add a registry entry, add the i18n labels (TR + EN), and drop the `.mp3` into `public/sounds/alarms/`.
+- **Translations** — edit `app/lib/i18n.tsx`.
+
+## Deployment
+
+The app builds to a standalone server (`output: "standalone"` in `next.config.ts`), so it deploys cleanly to any Node host or container. Set `NEXT_PUBLIC_SITE_URL` for the target environment.
