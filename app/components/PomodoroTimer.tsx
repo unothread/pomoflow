@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocalStorage } from "../lib/useLocalStorage";
 import SettingsPanel from "./SettingsPanel";
@@ -10,6 +10,7 @@ import {
   type PomodoroSettings,
   type SessionKind,
 } from "../lib/types";
+import { DEFAULT_ALARM, playAlarm } from "../lib/alarms";
 
 type Phase = SessionKind | "idle";
 
@@ -32,6 +33,24 @@ function sessionDurationMs(kind: SessionKind, settings: PomodoroSettings): numbe
     case "longBreak":
       return settings.longBreakMinutes * 60 * 1000;
   }
+}
+
+// Given the current phase, work out which phase comes next and the updated
+// focus count. A finished focus session counts toward the long-break cycle;
+// breaks always return to focus. Shared by auto-advance and manual skip so
+// both progress the cycle identically.
+function computeNext(
+  phase: SessionKind,
+  completedFocus: number,
+  settings: PomodoroSettings,
+): { nextPhase: SessionKind; newCompleted: number } {
+  if (phase !== "focus") {
+    return { nextPhase: "focus", newCompleted: completedFocus };
+  }
+  const newCompleted = completedFocus + 1;
+  const nextPhase: SessionKind =
+    newCompleted % settings.cyclesBeforeLongBreak === 0 ? "longBreak" : "shortBreak";
+  return { nextPhase, newCompleted };
 }
 
 // Map phase to translation key
@@ -64,7 +83,6 @@ type Action =
   | { type: "pause" }
   | { type: "resume"; endsAt: number }
   | { type: "reset" }
-  | { type: "skip"; nextPhase: SessionKind; endsAt: number }
   | {
       type: "advance";
       nextPhase: SessionKind;
@@ -95,13 +113,6 @@ function reducer(state: State, action: Action): State {
       return { ...state, endsAt: action.endsAt, running: true };
     case "reset":
       return { ...state, phase: "idle", running: false, endsAt: null };
-    case "skip":
-      return {
-        ...state,
-        phase: action.nextPhase,
-        endsAt: action.endsAt,
-        running: false,
-      };
     case "advance":
       return {
         ...state,
@@ -203,14 +214,11 @@ export default function PomodoroTimer() {
         state.endsAt !== null &&
         state.endsAt - nowTime <= 0
       ) {
-        const newCompleted =
-          state.phase === "focus" ? state.completedFocus + 1 : state.completedFocus;
-        const nextPhase: SessionKind =
-          state.phase === "focus"
-            ? newCompleted % settings.cyclesBeforeLongBreak === 0
-              ? "longBreak"
-              : "shortBreak"
-            : "focus";
+        const { nextPhase, newCompleted } = computeNext(
+          state.phase,
+          state.completedFocus,
+          settings,
+        );
         dispatch({
           type: "advance",
           nextPhase,
@@ -218,6 +226,7 @@ export default function PomodoroTimer() {
           running: settings.autoStart,
           newCompleted,
         });
+        playAlarm(settings.alarmSound ?? DEFAULT_ALARM);
         try {
           if (
             typeof Notification !== "undefined" &&
@@ -242,6 +251,23 @@ export default function PomodoroTimer() {
     state.completedFocus,
     settings,
   ]);
+
+  // Reflect remaining time in the document/tab title while a session is
+  // active; restore the original title when idle or on unmount.
+  const defaultTitleRef = useRef<string>("");
+  useEffect(() => {
+    if (!defaultTitleRef.current) defaultTitleRef.current = document.title;
+  }, []);
+  useEffect(() => {
+    if (state.phase === "idle") {
+      if (defaultTitleRef.current) document.title = defaultTitleRef.current;
+      return;
+    }
+    document.title = `${format(remainingMs)} · ${getPhaseLabel(state.phase, t)}`;
+    return () => {
+      if (defaultTitleRef.current) document.title = defaultTitleRef.current;
+    };
+  }, [remainingMs, state.phase, t]);
 
   // Pause when tab is hidden to avoid drift.
   useEffect(() => {
@@ -279,12 +305,17 @@ export default function PomodoroTimer() {
 
   function skipPhase() {
     if (state.phase === "idle") return;
-    const nextPhase: SessionKind =
-      state.phase === "focus" ? "shortBreak" : "focus";
+    const { nextPhase, newCompleted } = computeNext(
+      state.phase,
+      state.completedFocus,
+      settings,
+    );
     dispatch({
-      type: "skip",
+      type: "advance",
       nextPhase,
       endsAt: Date.now() + sessionDurationMs(nextPhase, settings),
+      running: state.running,
+      newCompleted,
     });
   }
 

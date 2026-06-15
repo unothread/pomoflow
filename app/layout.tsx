@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { SITE_URL, OG_IMAGE, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "./lib/site";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,25 +17,39 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Pomodoro — Ücretsiz, Sade Zamanlayıcı ve Lofi Radyo",
+  title: "Pomodoro Timer — Free, Minimal Timer & Lofi Radio",
   description:
-    "Ücretsiz, sade ve ayarlanabilir Pomodoro sayacı. Verimli çalışmak için görev listesi ve odaklanmayı kolaylaştıran lofi müzik çalar içerir.",
-  metadataBase: new URL('https://pomoflow.com'),
+    "Free, minimal and customizable Pomodoro timer. Includes a to-do list and a lofi music player to help you focus and work productively.",
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
-    title: "Pomodoro — Ücretsiz, Sade Zamanlayıcı ve Lofi Radyo",
-    description: "Ücretsiz, sade ve ayarlanabilir Pomodoro sayacı. Verimli çalışmak için görev listesi ve odaklanmayı kolaylaştıran lofi müzik çalar içerir.",
-    url: "https://pomoflow.com",
-    siteName: "Pomodoro",
-    locale: "tr_TR",
+    title: "Pomodoro Timer — Free, Minimal Timer & Lofi Radio",
+    description: "Free, minimal and customizable Pomodoro timer. Includes a to-do list and a lofi music player to help you focus and work productively.",
+    url: SITE_URL,
+    siteName: "Pomodoro Timer",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: "Pomodoro Timer — Free Timer & Lofi Radio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pomodoro — Ücretsiz, Sade Zamanlayıcı ve Lofi Radyo",
-    description: "Ücretsiz, sade ve ayarlanabilir Pomodoro sayacı. Verimli çalışmak için görev listesi ve odaklanmayı kolaylaştıran lofi müzik çalar içerir.",
+    title: "Pomodoro Timer — Free, Minimal Timer & Lofi Radio",
+    description: "Free, minimal and customizable Pomodoro timer. Includes a to-do list and a lofi music player to help you focus and work productively.",
+    images: [OG_IMAGE],
   },
 };
 
@@ -51,8 +67,9 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Pomodoro",
-    "description": "Ücretsiz, sade ve ayarlanabilir Pomodoro sayacı. Verimli çalışmak için görev listesi ve odaklanmayı kolaylaştıran lofi müzik çalar içerir.",
+    "name": "Pomodoro Timer",
+    "url": SITE_URL,
+    "description": "Free, minimal and customizable Pomodoro timer. Includes a to-do list and a lofi music player to help you focus and work productively.",
     "applicationCategory": "ProductivityApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -62,8 +79,10 @@ export default function RootLayout({
     }
   };
 
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
-    <html lang="tr" className={`scroll-smooth min-h-full antialiased ${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`scroll-smooth min-h-full antialiased ${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -73,6 +92,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans selection:bg-accent/30 transition-colors duration-500">
         {children}
       </body>
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );
 }

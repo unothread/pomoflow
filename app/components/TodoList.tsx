@@ -72,7 +72,7 @@ export default function TodoList() {
         </button>
       </form>
 
-      <div className="flex-1 overflow-y-auto min-h-0 -mx-2 px-2 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto min-h-0 max-h-[55vh] lg:max-h-none -mx-2 px-2 custom-scrollbar">
         {todos.length === 0 ? (
           <div className="py-6 text-center h-full flex flex-col justify-center items-center">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-background border border-card-border mb-3" style={{ borderRadius: 'var(--radius-button)' }}>
@@ -98,7 +98,7 @@ export default function TodoList() {
                   checked={tItem.done}
                   onChange={() => toggle(tItem.id)}
                   className="w-5 h-5 cursor-pointer"
-                  style={{ accentColor: 'var(--accent)' }}
+                  style={{ accentColor: 'var(--color-accent)' }}
                   aria-label={`${t("doneLabel")}: ${tItem.text}`}
                 />
                 <span

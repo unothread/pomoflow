@@ -1,7 +1,8 @@
 "use client";
 
 import { useLocalStorage } from "../lib/useLocalStorage";
-import { DEFAULT_SETTINGS, type PomodoroSettings } from "../lib/types";
+import { DEFAULT_SETTINGS, type PomodoroSettings, type AlarmId } from "../lib/types";
+import { ALARM_SOUNDS, DEFAULT_ALARM, playAlarm } from "../lib/alarms";
 import { useI18n } from "../lib/i18n";
 
 const SETTINGS_KEY = "pomoflow.settings.v1";
@@ -80,10 +81,10 @@ export default function SettingsPanel({ onClose }: SettingsPanelProps) {
 
       <div className="mt-8 pt-6 border-t border-card-border/50">
         <label className="flex items-center justify-between group cursor-pointer select-none">
-          <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+          <span className="text-sm font-medium text-foreground transition-colors">
             {t("autoStart")}
           </span>
-          <div className="relative inline-flex h-6 w-11 items-center transition-colors duration-200 ease-in-out focus:outline-none" style={{ backgroundColor: settings.autoStart ? 'var(--accent)' : 'var(--muted)', borderRadius: 'var(--radius-button)' }}>
+          <div className="relative inline-flex h-6 w-11 items-center transition-colors duration-200 ease-in-out focus:outline-none" style={{ backgroundColor: settings.autoStart ? 'var(--color-accent)' : 'var(--color-muted)', borderRadius: 'var(--radius-button)' }}>
             <input
               type="checkbox"
               className="sr-only"
@@ -101,8 +102,34 @@ export default function SettingsPanel({ onClose }: SettingsPanelProps) {
         <p className="text-xs text-muted mt-2">
           {t("autoStartDesc")}
         </p>
+
+        <div className="mt-6">
+          <span className="block text-xs font-medium text-muted mb-1.5">{t("alarmSound")}</span>
+          <div className="flex gap-2">
+            <select
+              value={settings.alarmSound ?? DEFAULT_ALARM}
+              onChange={(e) => update("alarmSound", e.target.value as AlarmId)}
+              className="flex-1 min-w-0 px-3 py-2.5 text-sm font-medium border-card-border bg-background/50 hover:bg-background focus:outline-none focus:border-accent transition-colors"
+              style={{ borderRadius: 'var(--radius-button)', borderWidth: '1px', color: 'var(--color-foreground)' }}
+            >
+              {ALARM_SOUNDS.map((sound) => (
+                <option key={sound.id} value={sound.id}>
+                  {t(sound.labelKey)}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              onClick={() => playAlarm(settings.alarmSound ?? DEFAULT_ALARM)}
+              className="px-4 py-2.5 text-sm font-medium bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors shrink-0"
+              style={{ borderRadius: 'var(--radius-button)' }}
+            >
+              {t("preview")}
+            </button>
+          </div>
+        </div>
       </div>
-      
+
       {onClose && (
         <div className="mt-8 pt-4">
           <button
@@ -147,7 +174,7 @@ function NumberField({
         max={max}
         onChange={(e) => onChange(Number(e.target.value))}
         className="w-full px-3 py-2.5 text-sm font-medium border-card-border bg-background/50 hover:bg-background focus:outline-none focus:border-accent transition-colors"
-        style={{ borderRadius: 'var(--radius-button)', borderWidth: '1px', color: 'var(--foreground)' }}
+        style={{ borderRadius: 'var(--radius-button)', borderWidth: '1px', color: 'var(--color-foreground)' }}
       />
     </label>
   );
