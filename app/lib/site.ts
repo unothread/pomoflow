@@ -3,8 +3,10 @@
  * tags, robots and sitemap. Override per environment with NEXT_PUBLIC_SITE_URL
  * (no trailing slash); falls back to the production subdomain.
  */
+// `||` (not `??`) so an empty-string env var — e.g. an unset Docker build
+// arg that resolves to "" — also falls back instead of producing an invalid URL.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   "https://pomodoro.ozgurpolat.net";
 
 /** Default Open Graph / social share image. Drop the file in public/. */
