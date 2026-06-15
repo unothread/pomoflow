@@ -57,6 +57,27 @@ Vercel için:
 npx vercel
 ```
 
+### Coolify (Dockerfile)
+
+Repo kökündeki `Dockerfile` Coolify'nin "Dockerfile" build pack'i ile
+birebir uyumlu. `next.config.ts` `output: "standalone"` kullandığı için
+final image ~150 MB civarında.
+
+Coolify'da yapman gereken tek şey:
+
+1. **New Resource → Application** → "Public/Private Repository (with
+   Dockerfile)" seç, `unothread/pomoflow` repo'sunu bağla.
+2. **Build Pack**: `Dockerfile` (default).
+3. **Port**: `3000` (Coolify genelde Dockerfile'ın `EXPOSE`'unu okur,
+   yine de kontrol et).
+4. **Healthcheck Path**: `/` (opsiyonel, Dockerfile'da `curl` ile yaptım).
+5. **Environment Variables**: gerekmez — tüm ayarlar tarayıcıda
+   `localStorage`'da tutuluyor.
+6. **Domain**: istediğin subdomain'i bağla, HTTPS Coolify'dan otomatik.
+
+Coolify repo'yu ilk build'de klonlarken Docker context'in şişmemesi
+için `.dockerignore` eklendi (`node_modules`, `.next/`, `.git/` vb.).
+
 ## Yapı
 
 ```
