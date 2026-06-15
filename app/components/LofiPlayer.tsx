@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocalStorage } from "../lib/useLocalStorage";
+import { useI18n } from "../lib/i18n";
+import { useTheme } from "../lib/theme";
 
 const STREAM_KEY = "pomoflow.lofi.videoId.v1";
 const VOLUME_KEY = "pomoflow.lofi.volume.v1";
@@ -64,6 +66,8 @@ function loadYouTubeAPI(): Promise<void> {
 }
 
 export default function LofiPlayer() {
+  const { t } = useI18n();
+  const { theme } = useTheme();
   const [videoId, setVideoId] = useLocalStorage<string>(STREAM_KEY, DEFAULT_VIDEO_ID);
   const [volume, setVolume] = useLocalStorage<number>(VOLUME_KEY, 60);
   const [playing, setPlaying] = useState(false);
@@ -153,95 +157,110 @@ export default function LofiPlayer() {
   };
 
   const applyNewId = () => {
-    const trimmed = inputValue.trim();
+    let trimmed = inputValue.trim();
     if (!trimmed) return;
+    
+    // Attempt to extract video ID from URL
+    try {
+      if (trimmed.includes("youtube.com") || trimmed.includes("youtu.be")) {
+        const url = new URL(trimmed.startsWith("http") ? trimmed : `https://${trimmed}`);
+        if (trimmed.includes("youtu.be")) {
+          trimmed = url.pathname.slice(1);
+        } else if (url.searchParams.has("v")) {
+          trimmed = url.searchParams.get("v") || trimmed;
+        }
+      }
+    } catch {
+      // If parsing fails, just use the trimmed string
+    }
+
     setVideoId(trimmed);
   };
 
   return (
-    <section className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5 shadow-sm">
-      <div className="flex items-center gap-3">
-        <div
-          className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
-            playing ? "bg-rose-100 text-rose-600" : "bg-zinc-100 text-zinc-500"
-          }`}
-          aria-hidden
-        >
-          {playing ? (
-            <span className="flex items-end gap-0.5 h-4">
-              <span className="w-1 h-4 bg-current animate-pulse" />
-              <span className="w-1 h-3 bg-current animate-pulse [animation-delay:120ms]" />
-              <span className="w-1 h-4 bg-current animate-pulse [animation-delay:240ms]" />
-            </span>
-          ) : (
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          )}
+    <section className="bg-card border-card-border p-6 sm:p-8 shadow-sm transition-colors duration-500" style={{ borderRadius: 'var(--radius-card)', borderWidth: '1px' }}>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="flex items-center gap-4">
+          <button
+            type="button"
+            onClick={toggle}
+            disabled={!ready}
+            className={`shrink-0 w-14 h-14 flex items-center justify-center transition-all ${
+              playing 
+                ? "bg-accent text-accent-foreground hover:opacity-90" 
+                : "bg-background border border-card-border text-foreground hover:bg-background/80 disabled:opacity-50"
+            }`}
+            style={{ borderRadius: 'var(--radius-button)' }}
+            aria-label={playing ? t("stop") : t("play")}
+          >
+            {playing ? (
+              <span className="flex items-end gap-1 h-5">
+                <span className="w-1.5 h-5 bg-current rounded-full animate-pulse" />
+                <span className="w-1.5 h-3 bg-current rounded-full animate-pulse [animation-delay:120ms]" />
+                <span className="w-1.5 h-4 bg-current rounded-full animate-pulse [animation-delay:240ms]" />
+              </span>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="ml-1">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
+          </button>
+
+          <div className="flex-1 min-w-0">
+            <div className="text-base font-semibold text-foreground tracking-tight">
+              {t("lofiTitle")}
+            </div>
+            <div className="text-sm text-muted mt-0.5">
+              {playing ? t("playing") : ready ? t("paused") : t("loading")}
+            </div>
+          </div>
         </div>
 
-        <div className="flex-1 min-w-0">
-          <div className="text-sm font-medium text-zinc-900 truncate">
-            Lofi radyo
-          </div>
-          <div className="text-xs text-zinc-500 truncate">
-            {playing ? "Çalıyor" : ready ? "Duraklatıldı" : "Yükleniyor…"}
-          </div>
+        <div className="flex items-center gap-4 sm:min-w-48">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <input
+            type="range"
+            min={0}
+            max={100}
+            value={volume}
+            onChange={(e) => setVolume(Number(e.target.value))}
+            className="flex-1"
+            style={{ accentColor: theme === 'garden' ? '#10b981' : '#8b5cf6' }}
+            aria-label="Ses seviyesi"
+          />
         </div>
-
-        <button
-          type="button"
-          onClick={toggle}
-          disabled={!ready}
-          className="px-4 py-2 rounded-full bg-zinc-900 text-white text-sm font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-zinc-700"
-        >
-          {playing ? "Durdur" : "Çal"}
-        </button>
       </div>
 
-      <div className="mt-3 flex items-center gap-3">
-        <span className="text-xs text-zinc-500 w-12">Ses</span>
-        <input
-          type="range"
-          min={0}
-          max={100}
-          value={volume}
-          onChange={(e) => setVolume(Number(e.target.value))}
-          className="flex-1 accent-rose-500"
-          aria-label="Ses seviyesi"
-        />
-        <span className="text-xs text-zinc-500 w-8 text-right tabular-nums">
-          {volume}
-        </span>
-      </div>
-
-      <details className="mt-3">
-        <summary className="text-xs text-zinc-500 cursor-pointer select-none">
-          Farklı bir YouTube video/canlı yayın kullan
+      <details className="mt-6 group">
+        <summary className="text-xs font-medium text-muted cursor-pointer select-none flex items-center gap-1.5">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-open:rotate-90">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+          {t("customStream")}
         </summary>
-        <div className="mt-2 flex gap-2">
+        <div className="mt-3 flex gap-2 pl-4">
           <input
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="YouTube video/canlı yayın ID"
-            className="flex-1 min-w-0 px-3 py-1.5 text-sm border border-zinc-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-200"
+            placeholder="YouTube video ID"
+            className="flex-1 min-w-0 px-3 py-2 text-sm border-card-border bg-background/50 text-foreground focus:outline-none focus:border-accent transition-colors"
+            style={{ borderRadius: 'var(--radius-button)', borderWidth: '1px' }}
           />
           <button
             type="button"
             onClick={applyNewId}
-            className="px-3 py-1.5 text-sm rounded-md bg-zinc-100 hover:bg-zinc-200 text-zinc-800"
+            className="px-4 py-2 text-sm font-medium bg-background border border-card-border hover:bg-background/80 text-foreground transition-colors"
+            style={{ borderRadius: 'var(--radius-button)' }}
           >
-            Uygula
+            {t("apply")}
           </button>
         </div>
-        <p className="mt-1 text-[11px] text-zinc-400">
-          Örn: <code className="font-mono">X4VbdwhkE10</code> — Lofi Girl
-        </p>
       </details>
 
-      {/* Hidden mount point for the YT iframe. The iframe itself is 0x0
-          so the page stays clean; audio plays in the background. */}
       <div
         ref={containerRef}
         aria-hidden

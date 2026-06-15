@@ -2,7 +2,7 @@ export default function LandingSEO() {
   return (
     <div className="w-full bg-card border-y border-card-border py-12 sm:py-20 mt-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <article className="max-w-none text-muted-foreground leading-relaxed">
+        <article className="max-w-none text-muted leading-relaxed">
           
           <h2 className="text-2xl sm:text-3xl mb-4 text-foreground font-semibold font-space">Pomodoro Nedir?</h2>
           <p className="mb-4">
