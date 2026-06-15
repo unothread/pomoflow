@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useReducer, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocalStorage } from "../lib/useLocalStorage";
+import SettingsPanel from "./SettingsPanel";
+import { useI18n } from "../lib/i18n";
 import {
   DEFAULT_SETTINGS,
   type PomodoroSettings,
@@ -31,18 +34,22 @@ function sessionDurationMs(kind: SessionKind, settings: PomodoroSettings): numbe
   }
 }
 
-const PHASE_LABELS: Record<Phase, string> = {
-  idle: "Hazır",
-  focus: "Odak",
-  shortBreak: "Kısa mola",
-  longBreak: "Uzun mola",
-};
+// Map phase to translation key
+const getPhaseLabel = (phase: Phase, t: (key: import("../lib/i18n").TranslationKey) => string) => {
+  switch (phase) {
+    case "idle": return t("idle");
+    case "focus": return t("focus");
+    case "shortBreak": return t("shortBreakLabel");
+    case "longBreak": return t("longBreakLabel");
+  }
+}
 
+// Colors now use CSS variables for theme support
 const PHASE_COLORS: Record<Phase, string> = {
-  idle: "from-zinc-200 to-zinc-100 text-zinc-700",
-  focus: "from-rose-300 to-rose-100 text-rose-900",
-  shortBreak: "from-emerald-300 to-emerald-100 text-emerald-900",
-  longBreak: "from-sky-300 to-sky-100 text-sky-900",
+  idle: "bg-timer-idle-bg border-timer-idle-border text-timer-idle-text",
+  focus: "bg-timer-focus-bg border-timer-focus-border text-timer-focus-text",
+  shortBreak: "bg-timer-short-bg border-timer-short-border text-timer-short-text",
+  longBreak: "bg-timer-long-bg border-timer-long-border text-timer-long-text",
 };
 
 type State = {
@@ -106,7 +113,42 @@ function reducer(state: State, action: Action): State {
   }
 }
 
+function SettingsModal() {
+  const { t } = useI18n();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="p-1.5 rounded-lg text-foreground/60 hover:text-foreground hover:bg-foreground/10 transition-colors focus:outline-none"
+        aria-label={t("settingsBtn")}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+
+      {isOpen && createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm animate-in fade-in duration-200">
+          <div 
+            className="fixed inset-0" 
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="relative w-full max-w-md animate-in slide-in-from-bottom-4 zoom-in-95 duration-200">
+            <SettingsPanel onClose={() => setIsOpen(false)} />
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
+  );
+}
+
 export default function PomodoroTimer() {
+  const { t } = useI18n();
   const [settings] = useLocalStorage<PomodoroSettings>(
     SETTINGS_KEY,
     DEFAULT_SETTINGS,
@@ -116,10 +158,16 @@ export default function PomodoroTimer() {
     0,
   );
   const [now, setNow] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState(false);
   const [state, dispatch] = useReducer(reducer, {
     ...INITIAL,
     completedFocus: persistedCompleted,
   });
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
+  }, []);
 
   // Push the latest completedFocus into persistent storage. The hook
   // handles writes; we just need to keep the persisted value aligned.
@@ -148,12 +196,12 @@ export default function PomodoroTimer() {
   useEffect(() => {
     if (!state.running) return;
     const tick = () => {
-      const t = Date.now();
-      setNow(t);
+      const nowTime = Date.now();
+      setNow(nowTime);
       if (
         state.phase !== "idle" &&
         state.endsAt !== null &&
-        state.endsAt - t <= 0
+        state.endsAt - nowTime <= 0
       ) {
         const newCompleted =
           state.phase === "focus" ? state.completedFocus + 1 : state.completedFocus;
@@ -166,7 +214,7 @@ export default function PomodoroTimer() {
         dispatch({
           type: "advance",
           nextPhase,
-          endsAt: t + sessionDurationMs(nextPhase, settings),
+          endsAt: nowTime + sessionDurationMs(nextPhase, settings),
           running: settings.autoStart,
           newCompleted,
         });
@@ -175,8 +223,8 @@ export default function PomodoroTimer() {
             typeof Notification !== "undefined" &&
             Notification.permission === "granted"
           ) {
-            new Notification("Pomodoro", {
-              body: `${PHASE_LABELS[state.phase]} bitti → ${PHASE_LABELS[nextPhase]}`,
+            new Notification(t("title"), {
+              body: `${getPhaseLabel(state.phase, t)} → ${getPhaseLabel(nextPhase, t)}`,
             });
           }
         } catch {
@@ -253,100 +301,115 @@ export default function PomodoroTimer() {
 
   return (
     <section
-      className={`rounded-3xl p-6 sm:p-8 shadow-sm bg-gradient-to-br ${PHASE_COLORS[state.phase]}`}
+      className={`p-4 sm:p-8 shadow-sm border transition-colors duration-500 flex flex-col h-auto ${PHASE_COLORS[state.phase]}`}
+      style={{ borderRadius: 'var(--radius-card)', borderWidth: '1px' }}
     >
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-3 sm:mb-4 relative shrink-0">
         <div className="flex items-center gap-2">
-          <span className="text-xs uppercase tracking-wider font-medium opacity-70">
-            {PHASE_LABELS[state.phase]}
+          <span className="text-[11px] uppercase tracking-widest font-semibold opacity-60">
+            {getPhaseLabel(state.phase, t)}
           </span>
           {state.phase !== "idle" && (
-            <span className="text-xs opacity-60">
-              · tur{" "}
+            <span className="text-[11px] uppercase tracking-widest font-semibold opacity-50">
+              · {t("round")}{" "}
               {(state.completedFocus % settings.cyclesBeforeLongBreak) +
                 (state.phase === "focus" ? 1 : 0)}
               /{settings.cyclesBeforeLongBreak}
             </span>
           )}
         </div>
-        <div className="text-xs opacity-60">
-          {settings.cyclesBeforeLongBreak} kısa molada 1 uzun mola
+        
+        <div className="flex items-center gap-3">
+          <div className="text-[11px] tracking-wide font-medium opacity-50 hidden sm:block">
+            {settings.cyclesBeforeLongBreak} {t("cyclesInfo")}
+          </div>
+          
+          <SettingsModal />
         </div>
       </div>
 
-      <div className="flex items-baseline justify-center my-4">
-        <span className="font-mono text-7xl sm:text-8xl font-semibold tabular-nums tracking-tight">
-          {format(remainingMs)}
-        </span>
-      </div>
+      <div className="flex-1 flex flex-col justify-center min-h-0">
+        <div className="flex items-baseline justify-center mb-4 sm:mb-6">
+          <span className="text-6xl sm:text-8xl font-bold tabular-nums tracking-tighter opacity-90 transition-colors">
+            {format(remainingMs)}
+          </span>
+        </div>
 
-      <div className="h-2 w-full rounded-full bg-white/50 overflow-hidden mb-6">
-        <div
-          className="h-full bg-current opacity-60 transition-all duration-300"
-          style={{ width: `${Math.min(100, Math.max(0, progress * 100))}%` }}
-        />
-      </div>
+        <div className="h-1.5 w-full bg-foreground/10 overflow-hidden mb-6 sm:mb-8 shrink-0" style={{ borderRadius: 'var(--radius-button)' }}>
+          <div
+            className="h-full bg-foreground/30 transition-all duration-300 ease-out"
+            style={{ width: `${Math.min(100, Math.max(0, progress * 100))}%`, borderRadius: 'var(--radius-button)' }}
+          />
+        </div>
 
-      <div className="flex flex-wrap gap-2 justify-center">
-        {state.phase === "idle" ? (
-          <>
-            <button
-              type="button"
-              onClick={() => startSession("focus")}
-              className="px-5 py-2.5 rounded-full bg-white/80 hover:bg-white text-zinc-900 text-sm font-medium shadow-sm"
-            >
-              Odaklanmayı başlat
-            </button>
-            <button
-              type="button"
-              onClick={() => startSession("shortBreak")}
-              className="px-4 py-2.5 rounded-full bg-white/40 hover:bg-white/60 text-zinc-800 text-sm font-medium"
-            >
-              Kısa mola
-            </button>
-            <button
-              type="button"
-              onClick={() => startSession("longBreak")}
-              className="px-4 py-2.5 rounded-full bg-white/40 hover:bg-white/60 text-zinc-800 text-sm font-medium"
-            >
-              Uzun mola
-            </button>
-          </>
-        ) : (
-          <>
-            <button
-              type="button"
-              onClick={togglePause}
-              className="px-6 py-2.5 rounded-full bg-white/80 hover:bg-white text-zinc-900 text-sm font-medium shadow-sm min-w-24"
-            >
-              {state.running ? "Duraklat" : "Devam et"}
-            </button>
-            <button
-              type="button"
-              onClick={skipPhase}
-              className="px-4 py-2.5 rounded-full bg-white/40 hover:bg-white/60 text-zinc-800 text-sm font-medium"
-            >
-              Atla
-            </button>
-            <button
-              type="button"
-              onClick={reset}
-              className="px-4 py-2.5 rounded-full bg-white/40 hover:bg-white/60 text-zinc-800 text-sm font-medium"
-            >
-              Sıfırla
-            </button>
-          </>
-        )}
-        {typeof Notification !== "undefined" &&
-          Notification.permission === "default" && (
-            <button
-              type="button"
-              onClick={requestNotifications}
-              className="px-3 py-2.5 rounded-full text-zinc-700 text-xs underline-offset-2 hover:underline"
-            >
-              Bildirim aç
-            </button>
+        <div className="flex flex-wrap gap-2.5 justify-center shrink-0">
+          {state.phase === "idle" ? (
+            <>
+              <button
+                type="button"
+                onClick={() => startSession("focus")}
+                className="px-4 sm:px-5 py-2 sm:py-2.5 bg-foreground hover:bg-foreground/90 text-background text-sm font-bold transition-colors"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("startFocus")}
+              </button>
+              <button
+                type="button"
+                onClick={() => startSession("shortBreak")}
+                className="px-3 sm:px-4 py-2 sm:py-2.5 bg-foreground/10 hover:bg-foreground/20 text-foreground text-sm font-bold transition-colors"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("startShortBreak")}
+              </button>
+              <button
+                type="button"
+                onClick={() => startSession("longBreak")}
+                className="px-3 sm:px-4 py-2 sm:py-2.5 bg-foreground/10 hover:bg-foreground/20 text-foreground text-sm font-bold transition-colors"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("startLongBreak")}
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={togglePause}
+                className="px-5 sm:px-6 py-2 sm:py-2.5 bg-foreground hover:bg-foreground/90 text-background text-sm font-bold transition-colors min-w-28 sm:min-w-32"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {state.running ? t("pause") : t("resume")}
+              </button>
+              <button
+                type="button"
+                onClick={skipPhase}
+                className="px-4 sm:px-5 py-2 sm:py-2.5 bg-foreground/10 hover:bg-foreground/20 text-foreground text-sm font-bold transition-colors"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("skip")}
+              </button>
+              <button
+                type="button"
+                onClick={reset}
+                className="px-4 sm:px-5 py-2 sm:py-2.5 bg-foreground/10 hover:bg-foreground/20 text-foreground text-sm font-bold transition-colors"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("reset")}
+              </button>
+            </>
           )}
+          {isMounted && typeof Notification !== "undefined" &&
+            Notification.permission === "default" && (
+              <button
+                type="button"
+                onClick={requestNotifications}
+                className="px-3 py-2 text-foreground/60 text-xs hover:text-foreground transition-colors font-bold"
+                style={{ borderRadius: 'var(--radius-button)' }}
+              >
+                {t("enableNotifs")}
+              </button>
+            )}
+        </div>
       </div>
     </section>
   );

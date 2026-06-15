@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - heading "Pomoflow" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e11]: Hazır
+            - generic [ref=e12]:
+              - generic [ref=e13]: 4 kısa mola, 1 uzun
+              - button "Ayarlar" [ref=e14]:
+                - img [ref=e15]
+          - generic [ref=e19]: 25:00
+          - generic [ref=e21]:
+            - button "Odaklanmayı başlat" [ref=e22]
+            - button "Kısa mola" [ref=e23]
+            - button "Uzun mola" [ref=e24]
+            - button "Bildirimleri aç" [ref=e25]
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - button "Çal" [ref=e29]:
+                - img [ref=e30]
+              - generic [ref=e32]:
+                - generic [ref=e33]: Lofi Radyo
+                - generic [ref=e34]: Duraklatıldı
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - slider "Ses seviyesi" [ref=e39]: "60"
+          - group [ref=e40]:
+            - generic "Farklı yayın kullan" [ref=e41] [cursor=pointer]:
+              - img [ref=e42]
+              - text: Farklı yayın kullan
+      - complementary [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - heading "Yapılacaklar" [level=2] [ref=e47]
+            - generic [ref=e48]: 0 kaldı · 0 tamam
+          - generic [ref=e49]:
+            - textbox "Yeni görev ekle…" [ref=e50]
+            - button "Ekle" [disabled] [ref=e51]
+          - generic [ref=e52]:
+            - img [ref=e54]
+            - paragraph [ref=e56]: Odaklanma seansı için görevlerini listele.
+    - contentinfo [ref=e57]:
+      - paragraph [ref=e58]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - button "Open Next.js Dev Tools" [ref=e64] [cursor=pointer]:
+    - img [ref=e65]
+  - alert [ref=e68]

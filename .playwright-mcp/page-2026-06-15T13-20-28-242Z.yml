@@ -1,0 +1,380 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button "garden" [ref=e6]
+        - button "space" [ref=e7]
+      - generic [ref=e8]:
+        - button "TR" [ref=e9]
+        - button "EN" [ref=e10]
+    - banner [ref=e11]:
+      - heading "Pomoflow" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e19]: Hazır
+          - generic [ref=e20]:
+            - generic [ref=e21]: 4 kısa mola, 1 uzun
+            - button "Ayarlar" [active] [ref=e22]:
+              - img [ref=e23]
+        - generic [ref=e26]:
+          - generic [ref=e28]: 25:00
+          - generic [ref=e30]:
+            - button "Odaklanmayı başlat" [ref=e31]
+            - button "Kısa mola" [ref=e32]
+            - button "Uzun mola" [ref=e33]
+            - button "Bildirimleri aç" [ref=e34]
+      - complementary [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - heading "Yapılacaklar" [level=2] [ref=e38]
+            - generic [ref=e39]: 60 kaldı · 0 tamam
+          - generic [ref=e40]:
+            - textbox "Yeni görev ekle…" [ref=e41]
+            - button "Ekle" [disabled] [ref=e42]
+          - list [ref=e44]:
+            - listitem [ref=e45]:
+              - 'checkbox "tamam: todo 1" [ref=e46] [cursor=pointer]'
+              - generic [ref=e47]: todo 1
+              - 'button "Sil: todo 1" [ref=e48]':
+                - img [ref=e49]
+            - listitem [ref=e52]:
+              - 'checkbox "tamam: todo 2" [ref=e53] [cursor=pointer]'
+              - generic [ref=e54]: todo 2
+              - 'button "Sil: todo 2" [ref=e55]':
+                - img [ref=e56]
+            - listitem [ref=e59]:
+              - 'checkbox "tamam: todo 3" [ref=e60] [cursor=pointer]'
+              - generic [ref=e61]: todo 3
+              - 'button "Sil: todo 3" [ref=e62]':
+                - img [ref=e63]
+            - listitem [ref=e66]:
+              - 'checkbox "tamam: todo 4" [ref=e67] [cursor=pointer]'
+              - generic [ref=e68]: todo 4
+              - 'button "Sil: todo 4" [ref=e69]':
+                - img [ref=e70]
+            - listitem [ref=e73]:
+              - 'checkbox "tamam: todo 5" [ref=e74] [cursor=pointer]'
+              - generic [ref=e75]: todo 5
+              - 'button "Sil: todo 5" [ref=e76]':
+                - img [ref=e77]
+            - listitem [ref=e80]:
+              - 'checkbox "tamam: todo 6" [ref=e81] [cursor=pointer]'
+              - generic [ref=e82]: todo 6
+              - 'button "Sil: todo 6" [ref=e83]':
+                - img [ref=e84]
+            - listitem [ref=e87]:
+              - 'checkbox "tamam: todo 7" [ref=e88] [cursor=pointer]'
+              - generic [ref=e89]: todo 7
+              - 'button "Sil: todo 7" [ref=e90]':
+                - img [ref=e91]
+            - listitem [ref=e94]:
+              - 'checkbox "tamam: todo 8" [ref=e95] [cursor=pointer]'
+              - generic [ref=e96]: todo 8
+              - 'button "Sil: todo 8" [ref=e97]':
+                - img [ref=e98]
+            - listitem [ref=e101]:
+              - 'checkbox "tamam: todo 9" [ref=e102] [cursor=pointer]'
+              - generic [ref=e103]: todo 9
+              - 'button "Sil: todo 9" [ref=e104]':
+                - img [ref=e105]
+            - listitem [ref=e108]:
+              - 'checkbox "tamam: todo 10" [ref=e109] [cursor=pointer]'
+              - generic [ref=e110]: todo 10
+              - 'button "Sil: todo 10" [ref=e111]':
+                - img [ref=e112]
+            - listitem [ref=e115]:
+              - 'checkbox "tamam: todo 11" [ref=e116] [cursor=pointer]'
+              - generic [ref=e117]: todo 11
+              - 'button "Sil: todo 11" [ref=e118]':
+                - img [ref=e119]
+            - listitem [ref=e122]:
+              - 'checkbox "tamam: todo 12" [ref=e123] [cursor=pointer]'
+              - generic [ref=e124]: todo 12
+              - 'button "Sil: todo 12" [ref=e125]':
+                - img [ref=e126]
+            - listitem [ref=e129]:
+              - 'checkbox "tamam: todo 13" [ref=e130] [cursor=pointer]'
+              - generic [ref=e131]: todo 13
+              - 'button "Sil: todo 13" [ref=e132]':
+                - img [ref=e133]
+            - listitem [ref=e136]:
+              - 'checkbox "tamam: todo 14" [ref=e137] [cursor=pointer]'
+              - generic [ref=e138]: todo 14
+              - 'button "Sil: todo 14" [ref=e139]':
+                - img [ref=e140]
+            - listitem [ref=e143]:
+              - 'checkbox "tamam: todo 15" [ref=e144] [cursor=pointer]'
+              - generic [ref=e145]: todo 15
+              - 'button "Sil: todo 15" [ref=e146]':
+                - img [ref=e147]
+            - listitem [ref=e186]:
+              - 'checkbox "tamam: todo 16" [ref=e187] [cursor=pointer]'
+              - generic [ref=e188]: todo 16
+              - 'button "Sil: todo 16" [ref=e189]':
+                - img [ref=e190]
+            - listitem [ref=e193]:
+              - 'checkbox "tamam: todo 17" [ref=e194] [cursor=pointer]'
+              - generic [ref=e195]: todo 17
+              - 'button "Sil: todo 17" [ref=e196]':
+                - img [ref=e197]
+            - listitem [ref=e200]:
+              - 'checkbox "tamam: todo 18" [ref=e201] [cursor=pointer]'
+              - generic [ref=e202]: todo 18
+              - 'button "Sil: todo 18" [ref=e203]':
+                - img [ref=e204]
+            - listitem [ref=e207]:
+              - 'checkbox "tamam: todo 19" [ref=e208] [cursor=pointer]'
+              - generic [ref=e209]: todo 19
+              - 'button "Sil: todo 19" [ref=e210]':
+                - img [ref=e211]
+            - listitem [ref=e214]:
+              - 'checkbox "tamam: todo 20" [ref=e215] [cursor=pointer]'
+              - generic [ref=e216]: todo 20
+              - 'button "Sil: todo 20" [ref=e217]':
+                - img [ref=e218]
+            - listitem [ref=e221]:
+              - 'checkbox "tamam: todo 21" [ref=e222] [cursor=pointer]'
+              - generic [ref=e223]: todo 21
+              - 'button "Sil: todo 21" [ref=e224]':
+                - img [ref=e225]
+            - listitem [ref=e228]:
+              - 'checkbox "tamam: todo 22" [ref=e229] [cursor=pointer]'
+              - generic [ref=e230]: todo 22
+              - 'button "Sil: todo 22" [ref=e231]':
+                - img [ref=e232]
+            - listitem [ref=e235]:
+              - 'checkbox "tamam: todo 23" [ref=e236] [cursor=pointer]'
+              - generic [ref=e237]: todo 23
+              - 'button "Sil: todo 23" [ref=e238]':
+                - img [ref=e239]
+            - listitem [ref=e242]:
+              - 'checkbox "tamam: todo 24" [ref=e243] [cursor=pointer]'
+              - generic [ref=e244]: todo 24
+              - 'button "Sil: todo 24" [ref=e245]':
+                - img [ref=e246]
+            - listitem [ref=e249]:
+              - 'checkbox "tamam: todo 25" [ref=e250] [cursor=pointer]'
+              - generic [ref=e251]: todo 25
+              - 'button "Sil: todo 25" [ref=e252]':
+                - img [ref=e253]
+            - listitem [ref=e256]:
+              - 'checkbox "tamam: todo 26" [ref=e257] [cursor=pointer]'
+              - generic [ref=e258]: todo 26
+              - 'button "Sil: todo 26" [ref=e259]':
+                - img [ref=e260]
+            - listitem [ref=e263]:
+              - 'checkbox "tamam: todo 27" [ref=e264] [cursor=pointer]'
+              - generic [ref=e265]: todo 27
+              - 'button "Sil: todo 27" [ref=e266]':
+                - img [ref=e267]
+            - listitem [ref=e270]:
+              - 'checkbox "tamam: todo 28" [ref=e271] [cursor=pointer]'
+              - generic [ref=e272]: todo 28
+              - 'button "Sil: todo 28" [ref=e273]':
+                - img [ref=e274]
+            - listitem [ref=e277]:
+              - 'checkbox "tamam: todo 29" [ref=e278] [cursor=pointer]'
+              - generic [ref=e279]: todo 29
+              - 'button "Sil: todo 29" [ref=e280]':
+                - img [ref=e281]
+            - listitem [ref=e284]:
+              - 'checkbox "tamam: todo 30" [ref=e285] [cursor=pointer]'
+              - generic [ref=e286]: todo 30
+              - 'button "Sil: todo 30" [ref=e287]':
+                - img [ref=e288]
+            - listitem [ref=e291]:
+              - 'checkbox "tamam: todo 31" [ref=e292] [cursor=pointer]'
+              - generic [ref=e293]: todo 31
+              - 'button "Sil: todo 31" [ref=e294]':
+                - img [ref=e295]
+            - listitem [ref=e298]:
+              - 'checkbox "tamam: todo 32" [ref=e299] [cursor=pointer]'
+              - generic [ref=e300]: todo 32
+              - 'button "Sil: todo 32" [ref=e301]':
+                - img [ref=e302]
+            - listitem [ref=e305]:
+              - 'checkbox "tamam: todo 33" [ref=e306] [cursor=pointer]'
+              - generic [ref=e307]: todo 33
+              - 'button "Sil: todo 33" [ref=e308]':
+                - img [ref=e309]
+            - listitem [ref=e312]:
+              - 'checkbox "tamam: todo 34" [ref=e313] [cursor=pointer]'
+              - generic [ref=e314]: todo 34
+              - 'button "Sil: todo 34" [ref=e315]':
+                - img [ref=e316]
+            - listitem [ref=e319]:
+              - 'checkbox "tamam: todo 35" [ref=e320] [cursor=pointer]'
+              - generic [ref=e321]: todo 35
+              - 'button "Sil: todo 35" [ref=e322]':
+                - img [ref=e323]
+            - listitem [ref=e326]:
+              - 'checkbox "tamam: todo 36" [ref=e327] [cursor=pointer]'
+              - generic [ref=e328]: todo 36
+              - 'button "Sil: todo 36" [ref=e329]':
+                - img [ref=e330]
+            - listitem [ref=e333]:
+              - 'checkbox "tamam: todo 37" [ref=e334] [cursor=pointer]'
+              - generic [ref=e335]: todo 37
+              - 'button "Sil: todo 37" [ref=e336]':
+                - img [ref=e337]
+            - listitem [ref=e340]:
+              - 'checkbox "tamam: todo 38" [ref=e341] [cursor=pointer]'
+              - generic [ref=e342]: todo 38
+              - 'button "Sil: todo 38" [ref=e343]':
+                - img [ref=e344]
+            - listitem [ref=e347]:
+              - 'checkbox "tamam: todo 39" [ref=e348] [cursor=pointer]'
+              - generic [ref=e349]: todo 39
+              - 'button "Sil: todo 39" [ref=e350]':
+                - img [ref=e351]
+            - listitem [ref=e354]:
+              - 'checkbox "tamam: todo 40" [ref=e355] [cursor=pointer]'
+              - generic [ref=e356]: todo 40
+              - 'button "Sil: todo 40" [ref=e357]':
+                - img [ref=e358]
+            - listitem [ref=e361]:
+              - 'checkbox "tamam: todo 41" [ref=e362] [cursor=pointer]'
+              - generic [ref=e363]: todo 41
+              - 'button "Sil: todo 41" [ref=e364]':
+                - img [ref=e365]
+            - listitem [ref=e368]:
+              - 'checkbox "tamam: todo 42" [ref=e369] [cursor=pointer]'
+              - generic [ref=e370]: todo 42
+              - 'button "Sil: todo 42" [ref=e371]':
+                - img [ref=e372]
+            - listitem [ref=e375]:
+              - 'checkbox "tamam: todo 43" [ref=e376] [cursor=pointer]'
+              - generic [ref=e377]: todo 43
+              - 'button "Sil: todo 43" [ref=e378]':
+                - img [ref=e379]
+            - listitem [ref=e382]:
+              - 'checkbox "tamam: todo 44" [ref=e383] [cursor=pointer]'
+              - generic [ref=e384]: todo 44
+              - 'button "Sil: todo 44" [ref=e385]':
+                - img [ref=e386]
+            - listitem [ref=e389]:
+              - 'checkbox "tamam: todo 45" [ref=e390] [cursor=pointer]'
+              - generic [ref=e391]: todo 45
+              - 'button "Sil: todo 45" [ref=e392]':
+                - img [ref=e393]
+            - listitem [ref=e396]:
+              - 'checkbox "tamam: todo 46" [ref=e397] [cursor=pointer]'
+              - generic [ref=e398]: todo 46
+              - 'button "Sil: todo 46" [ref=e399]':
+                - img [ref=e400]
+            - listitem [ref=e403]:
+              - 'checkbox "tamam: todo 47" [ref=e404] [cursor=pointer]'
+              - generic [ref=e405]: todo 47
+              - 'button "Sil: todo 47" [ref=e406]':
+                - img [ref=e407]
+            - listitem [ref=e410]:
+              - 'checkbox "tamam: todo 48" [ref=e411] [cursor=pointer]'
+              - generic [ref=e412]: todo 48
+              - 'button "Sil: todo 48" [ref=e413]':
+                - img [ref=e414]
+            - listitem [ref=e417]:
+              - 'checkbox "tamam: todo 49" [ref=e418] [cursor=pointer]'
+              - generic [ref=e419]: todo 49
+              - 'button "Sil: todo 49" [ref=e420]':
+                - img [ref=e421]
+            - listitem [ref=e424]:
+              - 'checkbox "tamam: todo 50" [ref=e425] [cursor=pointer]'
+              - generic [ref=e426]: todo 50
+              - 'button "Sil: todo 50" [ref=e427]':
+                - img [ref=e428]
+            - listitem [ref=e431]:
+              - 'checkbox "tamam: todo 51" [ref=e432] [cursor=pointer]'
+              - generic [ref=e433]: todo 51
+              - 'button "Sil: todo 51" [ref=e434]':
+                - img [ref=e435]
+            - listitem [ref=e438]:
+              - 'checkbox "tamam: todo 52" [ref=e439] [cursor=pointer]'
+              - generic [ref=e440]: todo 52
+              - 'button "Sil: todo 52" [ref=e441]':
+                - img [ref=e442]
+            - listitem [ref=e445]:
+              - 'checkbox "tamam: todo 53" [ref=e446] [cursor=pointer]'
+              - generic [ref=e447]: todo 53
+              - 'button "Sil: todo 53" [ref=e448]':
+                - img [ref=e449]
+            - listitem [ref=e452]:
+              - 'checkbox "tamam: todo 54" [ref=e453] [cursor=pointer]'
+              - generic [ref=e454]: todo 54
+              - 'button "Sil: todo 54" [ref=e455]':
+                - img [ref=e456]
+            - listitem [ref=e459]:
+              - 'checkbox "tamam: todo 55" [ref=e460] [cursor=pointer]'
+              - generic [ref=e461]: todo 55
+              - 'button "Sil: todo 55" [ref=e462]':
+                - img [ref=e463]
+            - listitem [ref=e466]:
+              - 'checkbox "tamam: todo 56" [ref=e467] [cursor=pointer]'
+              - generic [ref=e468]: todo 56
+              - 'button "Sil: todo 56" [ref=e469]':
+                - img [ref=e470]
+            - listitem [ref=e473]:
+              - 'checkbox "tamam: todo 57" [ref=e474] [cursor=pointer]'
+              - generic [ref=e475]: todo 57
+              - 'button "Sil: todo 57" [ref=e476]':
+                - img [ref=e477]
+            - listitem [ref=e480]:
+              - 'checkbox "tamam: todo 58" [ref=e481] [cursor=pointer]'
+              - generic [ref=e482]: todo 58
+              - 'button "Sil: todo 58" [ref=e483]':
+                - img [ref=e484]
+            - listitem [ref=e487]:
+              - 'checkbox "tamam: todo 59" [ref=e488] [cursor=pointer]'
+              - generic [ref=e489]: todo 59
+              - 'button "Sil: todo 59" [ref=e490]':
+                - img [ref=e491]
+            - listitem [ref=e494]:
+              - 'checkbox "tamam: todo 60" [ref=e495] [cursor=pointer]'
+              - generic [ref=e496]: todo 60
+              - 'button "Sil: todo 60" [ref=e497]':
+                - img [ref=e498]
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - button "Durdur" [ref=e181]
+          - generic [ref=e157]:
+            - generic [ref=e158]: Lofi Radyo
+            - generic [ref=e159]: Çalıyor
+        - generic [ref=e160]:
+          - img [ref=e161]
+          - slider "Ses seviyesi" [ref=e164]: "60"
+      - group [ref=e165]:
+        - generic "Farklı yayın kullan" [ref=e166] [cursor=pointer]:
+          - img [ref=e167]
+          - text: Farklı yayın kullan
+    - contentinfo [ref=e169]:
+      - paragraph [ref=e170]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - button "Open Next.js Dev Tools" [ref=e176] [cursor=pointer]:
+    - img [ref=e177]
+  - alert [ref=e180]
+  - generic [ref=e504]:
+    - button "Kapat" [ref=e505]:
+      - img [ref=e506]
+    - banner [ref=e509]:
+      - heading "Ayarlar" [level=2] [ref=e510]
+      - paragraph [ref=e511]: Değişiklikler otomatik kaydedilir.
+    - generic [ref=e512]:
+      - generic [ref=e513]:
+        - generic [ref=e514]: Odak süresi (dk)
+        - spinbutton "Odak süresi (dk)" [ref=e515]: "25"
+      - generic [ref=e516]:
+        - generic [ref=e517]: Kısa mola (dk)
+        - spinbutton "Kısa mola (dk)" [ref=e518]: "5"
+      - generic [ref=e519]:
+        - generic [ref=e520]: Uzun mola (dk)
+        - spinbutton "Uzun mola (dk)" [ref=e521]: "15"
+      - generic [ref=e522]:
+        - generic [ref=e523]: Uzun moladan önceki
+        - spinbutton "Uzun moladan önceki" [ref=e524]: "4"
+    - generic [ref=e525]:
+      - generic [ref=e526] [cursor=pointer]:
+        - generic [ref=e527]: Otomatik devam et
+        - checkbox "Otomatik devam et" [ref=e529]
+      - paragraph [ref=e531]: Seans bitince alarm çalar ve sıradaki seans başlar.
+    - button "Tamam" [ref=e533]

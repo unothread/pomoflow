@@ -1,0 +1,144 @@
+[     107ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[     140ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[     196ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="page.tsx">
+                  <SegmentTrieNode>
+                  <Home>
+                    <div className="flex-1 w-f...">
+                      <header>
+                      <aside>
+                      <div className="grid grid-...">
+                        <div className="lg:col-spa...">
+                          <PomodoroTimer>
+                            <section className="rounded-3x...">
+                              <div>
+                              <div>
+                              <div>
+                              <div className="flex flex-...">
+                                <button>
+                                <button>
+                                <button>
++                               <button
++                                 type="button"
++                                 onClick={function requestNotifications}
++                                 className="px-3 py-2.5 rounded-full text-zinc-700 text-xs underline-offset-2 hover:u..."
++                               >
+                          ...
+                        ...
+                      ...
+                ...
+              ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6758:918)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+[    1505ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=84425336&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=84425336') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&vf=1:0
+[    1505ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=84425336&cv_attributed=0:0
+[  403319ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  403467ms] [LOG] [Fast Refresh] done in 250ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  455467ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  455938ms] [LOG] [Fast Refresh] done in 523ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  456038ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  456066ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  456086ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={{...}} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="page.tsx">
+                  <SegmentTrieNode>
+                  <Home>
+                    <div className="flex-1 w-f...">
+                      <header>
+                      <aside>
+                      <div className="grid grid-...">
+                        <div className="lg:col-spa...">
+                          <PomodoroTimer>
+                            <section className="rounded-3x...">
+                              <div>
+                              <div>
+                              <div>
+                              <div className="flex flex-...">
+                                <button>
+                                <button>
+                                <button>
++                               <button
++                                 type="button"
++                                 onClick={function requestNotifications}
++                                 className="px-3 py-2.5 rounded-full text-zinc-700 text-xs underline-offset-2 hover:u..."
++                               >
+                          ...
+                        ...
+                      ...
+                ...
+              ...
+
+    at throwOnHydrationMismatch (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3318:56)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6758:918)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopConcurrentByScheduler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+[  457377ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&gporigin=http%3A%2F%2Flocalhost%3A3000%2F&vf=1:0
+[  457377ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756&cv_attributed=0:0
+[  459896ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  459926ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  469513ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  469558ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  457377ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&gporigin=http%3A%2F%2Flocalhost%3A3000%2F&vf=1:0
+[  457377ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=486915756&cv_attributed=0:0
+[  470253ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=206693616&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=206693616') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=3&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&gporigin=http%3A%2F%2Flocalhost%3A3000%2F&vf=1:0
+[  470254ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=206693616&cv_attributed=0:0
+[  481106ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  481133ms] [LOG] [Fast Refresh] done in 25ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  496449ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  496477ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  501494ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  501523ms] [LOG] [Fast Refresh] done in 21ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  521251ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  521281ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  534142ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  534171ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  549404ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  549433ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - heading "Pomoflow" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - generic [ref=e11]: Hazır
+          - generic [ref=e12]:
+            - generic [ref=e13]: 4 kısa mola, 1 uzun
+            - button "Ayarlar" [ref=e14]:
+              - img [ref=e15]
+        - generic [ref=e18]:
+          - generic [ref=e20]: 25:00
+          - generic [ref=e22]:
+            - button "Odaklanmayı başlat" [ref=e23]
+            - button "Kısa mola" [ref=e24]
+            - button "Uzun mola" [ref=e25]
+            - button "Bildirimleri aç" [ref=e26]
+      - complementary [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - heading "Yapılacaklar" [level=2] [ref=e30]
+            - generic [ref=e31]: 0 kaldı · 0 tamam
+          - generic [ref=e32]:
+            - textbox "Yeni görev ekle…" [ref=e33]
+            - button "Ekle" [disabled] [ref=e34]
+          - generic [ref=e36]:
+            - img [ref=e38]
+            - paragraph [ref=e40]: Odaklanma seansı için görevlerini listele.
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - button "Çal" [disabled] [ref=e45]:
+            - img [ref=e46]
+          - generic [ref=e48]:
+            - generic [ref=e49]: Lofi Radyo
+            - generic [ref=e50]: Yükleniyor…
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - slider "Ses seviyesi" [ref=e55]: "60"
+      - group [ref=e56]:
+        - generic "Farklı yayın kullan" [ref=e57] [cursor=pointer]:
+          - img [ref=e58]
+          - text: Farklı yayın kullan
+    - contentinfo [ref=e60]:
+      - paragraph [ref=e61]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - button "Open Next.js Dev Tools" [ref=e67] [cursor=pointer]:
+    - img [ref=e68]
+  - alert [ref=e71]

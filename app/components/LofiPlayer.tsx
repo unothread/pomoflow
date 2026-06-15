@@ -229,7 +229,7 @@ export default function LofiPlayer() {
             onChange={(e) => setVolume(Number(e.target.value))}
             className="flex-1"
             style={{ accentColor: theme === 'garden' ? '#10b981' : '#8b5cf6' }}
-            aria-label="Ses seviyesi"
+            aria-label={t("volume")}
           />
         </div>
       </div>
@@ -246,7 +246,7 @@ export default function LofiPlayer() {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="YouTube video ID"
+            placeholder={t("youtubePlaceholder")}
             className="flex-1 min-w-0 px-3 py-2 text-sm border-card-border bg-background/50 text-foreground focus:outline-none focus:border-accent transition-colors"
             style={{ borderRadius: 'var(--radius-button)', borderWidth: '1px' }}
           />

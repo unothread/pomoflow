@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button "garden" [ref=e6]
+        - button "space" [ref=e7]
+      - generic [ref=e8]:
+        - button "TR" [ref=e9]
+        - button "EN" [ref=e10]
+    - banner [ref=e11]:
+      - heading "Pomoflow" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Focus, take a break, listen to lofi. Just work.
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e19]: Ready
+          - generic [ref=e20]:
+            - generic [ref=e21]: 4 short breaks, 1 long
+            - button "Ayarlar" [ref=e22]:
+              - img [ref=e23]
+        - generic [ref=e26]:
+          - generic [ref=e28]: 25:00
+          - generic [ref=e30]:
+            - button "Start focus" [ref=e31]
+            - button "Short break" [ref=e32]
+            - button "Long break" [ref=e33]
+      - complementary [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Tasks" [level=2] [ref=e37]
+            - generic [ref=e38]: 0 left · 0 done
+          - generic [ref=e39]:
+            - textbox "Add new task…" [ref=e40]
+            - button "Add" [disabled] [ref=e41]
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - paragraph [ref=e47]: List your tasks for the focus session.
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - button "Play" [disabled] [ref=e52]:
+            - img [ref=e53]
+          - generic [ref=e55]:
+            - generic [ref=e56]: Lofi Radio
+            - generic [ref=e57]: Loading…
+        - generic [ref=e58]:
+          - img [ref=e59]
+          - slider "Ses seviyesi" [ref=e62]: "60"
+      - group [ref=e63]:
+        - generic "Use custom stream" [ref=e64] [cursor=pointer]:
+          - img [ref=e65]
+          - text: Use custom stream
+    - contentinfo [ref=e67]:
+      - paragraph [ref=e68]: Pomoflow · runs locally, data is stored in your browser.
+  - button "Open Next.js Dev Tools" [ref=e74] [cursor=pointer]:
+    - img [ref=e75]

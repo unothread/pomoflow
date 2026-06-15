@@ -1,0 +1,1572 @@
+[      74ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[      81ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[     986ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=366685170&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=366685170') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&vf=1:0
+[     986ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=366685170&cv_attributed=0:0
+[  233834ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  234285ms] [LOG] [Fast Refresh] done in 499ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  234444ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  234453ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  235380ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=456276945&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=456276945') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&gporigin=http%3A%2F%2Flocalhost%3A3000%2F&vf=1:0
+[  235380ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=456276945&cv_attributed=0:0
+[  260768ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  260799ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  287069ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  287099ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  296113ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  296143ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  309153ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  309199ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309199ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309314ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  309436ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309436ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309538ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  309624ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309624ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:3318
+[  309624ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  309637ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  309657ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/?_rsc=q3mOO9BClNZHexY7:0
+[  309661ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  309765ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  309793ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  309804ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  309813ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  309813ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  309841ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  309841ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  310393ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  310394ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  310462ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  361769ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  361798ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  361826ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  361834ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  361837ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  361845ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  361846ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  361907ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  361907ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  361944ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  405096ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  405114ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  405126ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  405132ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  405139ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  405145ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  405145ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  405195ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  405195ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  405243ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  455678ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  455712ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  455735ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  455740ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  455744ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  455749ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  455749ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  455805ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  455805ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  455848ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  472563ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  472579ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  472589ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  472596ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  472599ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  472603ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  472603ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  472664ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  472664ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  479305ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  479322ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  479336ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  479339ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  479344ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  479353ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  479353ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  479403ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  479403ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  484422ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  484439ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  484449ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  484453ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  484457ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  484460ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  484460ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  484518ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  484518ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502678ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  502694ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[  502716ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_react-dom_0kla17-._.js:15305
+[  502722ms] Error: ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/lib/i18n.ts:123:27)
+    at Object.getCompilationErrors (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/dev/next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/ozgurpolat/Projects/pomoflow/node_modules/next/dist/server/base-server.js:1753:26)
+[  502728ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  502729ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502729ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502734ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502734ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502783ms] [ERROR] ./app/lib/i18n.ts:123:27
+Expected '>', got 'ident'
+  121 |
+  122 |   return (
+> 123 |     <I18nContext.Provider value={{ lang: mounted ? lang : "tr", setLang, t }}>
+      |                           ^^^^^
+  124 |       {children}
+  125 |     </I18nContext.Provider>
+  126 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/i18n.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/i18n.ts [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/i18n.ts [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502783ms] [ERROR] ./app/lib/theme.ts:31:28
+Expected '>', got 'ident'
+  29 |
+  30 |   return (
+> 31 |     <ThemeContext.Provider value={{ theme: mounted ? theme : "garden", setTheme }}>
+     |                            ^^^^^
+  32 |       {children}
+  33 |     </ThemeContext.Provider>
+  34 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Server Component:
+    ./app/lib/theme.ts
+    ./app/page.tsx
+
+  Client Component Browser:
+    ./app/lib/theme.ts [Client Component Browser]
+    ./app/components/HeaderControls.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Client Component Browser]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/lib/theme.ts [Client Component SSR]
+    ./app/components/HeaderControls.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Client Component SSR]
+    ./app/HomeClient.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1945
+[  502833ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  510876ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  510926ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1gdrd03._.js:1226
+[  511040ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  511051ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  512614ms] [ERROR] Access to fetch at 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=1034654074&cv_attributed=0' (redirected from 'https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=1034654074') from origin 'https://www.youtube.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.youtube.com/embed/X4VbdwhkE10?autoplay=0&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A3000&widgetid=1&forigin=http%3A%2F%2Flocalhost%3A3000%2F&aoriginsup=1&gporigin=http%3A%2F%2Flocalhost%3A3000%2F&vf=1:0
+[  512615ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=56&cver=2_20260612&foc_id=SJ4gkVC6NrvII8umztf0Ow&label=followon_view&ptype=no_rmkt&random=1034654074&cv_attributed=0:0
+[  634633ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477
+[  634659ms] [LOG] [Fast Refresh] done in 17ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477

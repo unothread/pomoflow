@@ -1,0 +1,58 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - button "garden" [ref=e6]
+        - button "space" [ref=e7]
+        - button "8bit" [active] [ref=e8]
+      - generic [ref=e9]:
+        - button "TR" [ref=e10]
+        - button "EN" [ref=e11]
+    - banner [ref=e12]:
+      - heading "Pomoflow" [level=1] [ref=e13]
+      - paragraph [ref=e14]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - generic [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e20]: Hazır
+          - generic [ref=e21]:
+            - generic [ref=e92]: 4 kısa mola, 1 uzun
+            - button "Ayarlar" [ref=e22]:
+              - img [ref=e23]
+        - generic [ref=e26]:
+          - generic [ref=e28]: 25:00
+          - generic [ref=e30]:
+            - button "Odaklanmayı başlat" [ref=e78]
+            - button "Kısa mola" [ref=e79]
+            - button "Uzun mola" [ref=e80]
+            - button "Bildirimleri aç" [ref=e81]
+      - complementary [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Yapılacaklar" [level=2] [ref=e82]
+            - generic [ref=e38]: 0 kaldı · 0 tamam
+          - generic [ref=e39]:
+            - textbox "Yeni görev ekle…" [ref=e83]
+            - button "Ekle" [disabled] [ref=e84]
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - paragraph [ref=e47]: Odaklanma seansı için görevlerini listele.
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - button "Durdur" [ref=e85]
+          - generic [ref=e55]:
+            - generic [ref=e56]: Lofi Radyo
+            - generic [ref=e57]: Çalıyor
+        - generic [ref=e58]:
+          - img [ref=e59]
+          - slider "Ses seviyesi" [ref=e62]: "60"
+      - group [ref=e63]:
+        - generic "Farklı yayın kullan" [ref=e90] [cursor=pointer]:
+          - img [ref=e65]
+          - text: Farklı yayın kullan
+    - contentinfo [ref=e67]:
+      - paragraph [ref=e68]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - button "Open Next.js Dev Tools" [ref=e74] [cursor=pointer]:
+    - img [ref=e75]
+  - alert [ref=e91]

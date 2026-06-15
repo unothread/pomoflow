@@ -1,0 +1,37 @@
+uid=7_0 RootWebArea "Pomoflow — sade pomodoro + lofi" url="http://localhost:3000/"
+  uid=7_1 button "Garden"
+  uid=7_2 button "Space"
+  uid=7_3 button "TR"
+  uid=7_4 button "EN"
+  uid=7_5 banner
+    uid=7_6 heading "Pomoflow" level="1"
+    uid=7_7 StaticText "Focus, take a break, listen to lofi. Just work."
+  uid=7_8 StaticText "READY"
+  uid=7_9 StaticText "4"
+  uid=7_10 StaticText "short breaks, 1 long"
+  uid=7_11 button "Ayarlar"
+  uid=7_12 StaticText "25:00"
+  uid=7_13 button "Start focus"
+  uid=7_14 button "Short break"
+  uid=7_15 button "Long break"
+  uid=7_16 button "Enable notifications"
+  uid=7_17 complementary
+    uid=7_18 heading "Tasks" level="2"
+    uid=7_19 StaticText "0"
+    uid=7_20 StaticText "left"
+    uid=7_21 StaticText " · "
+    uid=7_22 StaticText "0"
+    uid=7_23 StaticText "done"
+    uid=7_24 form
+      uid=7_25 textbox "Add new task…"
+      uid=7_26 button "Add" disableable disabled
+    uid=7_27 StaticText "List your tasks for the focus session."
+  uid=7_28 button "Stop"
+  uid=7_29 StaticText "Lofi Radio"
+  uid=7_30 StaticText "Playing"
+  uid=7_31 slider "Ses seviyesi" orientation="horizontal" value="60" valuemax="100" valuemin="0" valuetext=""
+  uid=7_32 DisclosureTriangle "Use custom stream" expandable
+  uid=7_33 contentinfo
+    uid=7_34 StaticText "Pomoflow · runs locally, data is stored in your browser."
+  uid=7_35 button "Open Next.js Dev Tools" expandable haspopup="menu"
+  uid=7_36 alert atomic live="assertive" relevant="additions text"

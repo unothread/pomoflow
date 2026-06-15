@@ -1,21 +1,127 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fafafa;
-  --foreground: #18181b;
+@theme {
+  --color-background: var(--app-bg);
+  --color-foreground: var(--app-fg);
+  --color-card: var(--app-card-bg);
+  --color-card-border: var(--app-card-border);
+  --color-accent: var(--app-accent);
+  --color-accent-foreground: var(--app-accent-fg);
+  --color-muted: var(--app-muted);
+  --color-muted-foreground: var(--app-muted-fg);
+  
+  --color-timer-idle-bg: var(--timer-idle-bg);
+  --color-timer-idle-border: var(--timer-idle-border);
+  --color-timer-idle-text: var(--timer-idle-text);
+  --color-timer-focus-bg: var(--timer-focus-bg);
+  --color-timer-focus-border: var(--timer-focus-border);
+  --color-timer-focus-text: var(--timer-focus-text);
+  --color-timer-short-bg: var(--timer-short-bg);
+  --color-timer-short-border: var(--timer-short-border);
+  --color-timer-short-text: var(--timer-short-text);
+  --color-timer-long-bg: var(--timer-long-bg);
+  --color-timer-long-border: var(--timer-long-border);
+  --color-timer-long-text: var(--timer-long-text);
+
+  --font-sans: var(--font-current), system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+@layer base {
+  :root {
+    --app-bg: #f0fdf4; /* emerald-50 ish for garden */
+    --app-fg: #064e3b; /* emerald-900 */
+    --app-card-bg: #ffffff;
+    --app-card-border: #d1fae5; /* emerald-100 */
+    --app-accent: #10b981; /* emerald-500 */
+    --app-accent-fg: #ffffff;
+    --app-muted: #047857; /* emerald-700 */
+    --app-muted-fg: #a7f3d0; /* emerald-200 */
+    --font-current: var(--font-inter);
+    
+    /* Timer Colors */
+    --timer-idle-bg: #ecfdf5;
+    --timer-idle-border: #a7f3d0;
+    --timer-idle-text: #064e3b;
+    
+    --timer-focus-bg: #fdf2f8; /* rose-50 */
+    --timer-focus-border: #fbcfe8; /* rose-200 */
+    --timer-focus-text: #881337; /* rose-900 */
+    
+    --timer-short-bg: #f0fdfa; /* emerald-50 */
+    --timer-short-border: #a7f3d0; /* emerald-200 */
+    --timer-short-text: #064e3b; /* emerald-900 */
+    
+    --timer-long-bg: #f0f9ff; /* teal-50 */
+    --timer-long-border: #ccfbf1; /* teal-200 */
+    --timer-long-text: #134e4a; /* teal-900 */
+    
+    --radius-card: 1.5rem;
+    --radius-button: 1rem;
+  }
+
+  :root.theme-garden {
+    /* Default is already garden, but explicit for clarity */
+  }
+
+  :root.theme-space {
+    --app-bg: #030712; /* slate-950 */
+    --app-fg: #f8fafc; /* slate-50 */
+    --app-card-bg: rgba(15, 23, 42, 0.6); /* slate-900/60 */
+    --app-card-border: rgba(51, 65, 85, 0.5); /* slate-700/50 */
+    --app-accent: #8b5cf6; /* violet-500 */
+    --app-accent-fg: #ffffff;
+    --app-muted: #94a3b8; /* slate-400 */
+    --app-muted-fg: #334155; /* slate-700 */
+    --font-current: var(--font-space);
+    
+    --timer-idle-bg: rgba(15, 23, 42, 0.8);
+    --timer-idle-border: #334155;
+    --timer-idle-text: #cbd5e1;
+    
+    --timer-focus-bg: rgba(139, 92, 246, 0.1);
+    --timer-focus-border: rgba(139, 92, 246, 0.3);
+    --timer-focus-text: #ddd6fe;
+    
+    --timer-short-bg: rgba(14, 165, 233, 0.1);
+    --timer-short-border: rgba(14, 165, 233, 0.3);
+    --timer-short-text: #bae6fd;
+    
+    --timer-long-bg: rgba(236, 72, 153, 0.1);
+    --timer-long-border: rgba(236, 72, 153, 0.3);
+    --timer-long-text: #fbcfe8;
+    
+    --radius-card: 1.5rem;
+    --radius-button: 1rem;
+  }
+
+  html,
+  body {
+    background-color: var(--app-bg);
+    color: var(--app-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-html,
-body {
-  background: var(--background);
-  color: var(--foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.theme-space section {
+  backdrop-filter: blur(12px);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-accent) var(--app-card-border);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--app-card-border);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--app-accent);
+  border-radius: 9999px;
 }

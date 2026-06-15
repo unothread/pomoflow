@@ -1,0 +1,68 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - heading "Pomoflow" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]:
+            - generic [ref=e11]: Hazır
+            - generic [ref=e12]: 4 kısa mola, 1 uzun
+          - generic [ref=e14]: 25:00
+          - generic [ref=e16]:
+            - button "Odaklanmayı başlat" [ref=e17]
+            - button "Kısa mola" [ref=e18]
+            - button "Uzun mola" [ref=e19]
+            - button "Bildirimleri aç" [ref=e20]
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]:
+              - button "Çal" [disabled] [ref=e24]:
+                - img [ref=e25]
+              - generic [ref=e27]:
+                - generic [ref=e28]: Lofi Radyo
+                - generic [ref=e29]: Yükleniyor…
+            - generic [ref=e30]:
+              - img [ref=e31]
+              - slider "Ses seviyesi" [ref=e34]: "60"
+          - group [ref=e35]:
+            - generic "Farklı yayın kullan" [ref=e36] [cursor=pointer]:
+              - img [ref=e37]
+              - text: Farklı yayın kullan
+      - complementary [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - heading "Yapılacaklar" [level=2] [ref=e42]
+            - generic [ref=e43]: 0 kaldı · 0 tamam
+          - generic [ref=e44]:
+            - textbox "Yeni görev ekle…" [ref=e45]
+            - button "Ekle" [disabled] [ref=e46]
+          - generic [ref=e47]:
+            - img [ref=e49]
+            - paragraph [ref=e51]: Odaklanma seansı için görevlerini listele.
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - heading "Ayarlar" [level=2] [ref=e54]
+            - paragraph [ref=e55]: Değişiklikler otomatik kaydedilir.
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]: Odak süresi (dk)
+              - spinbutton "Odak süresi (dk)" [ref=e59]: "25"
+            - generic [ref=e60]:
+              - generic [ref=e61]: Kısa mola (dk)
+              - spinbutton "Kısa mola (dk)" [ref=e62]: "5"
+            - generic [ref=e63]:
+              - generic [ref=e64]: Uzun mola (dk)
+              - spinbutton "Uzun mola (dk)" [ref=e65]: "15"
+            - generic [ref=e66]:
+              - generic [ref=e67]: Uzun moladan önceki mola
+              - spinbutton "Uzun moladan önceki mola" [ref=e68]: "4"
+          - generic [ref=e69] [cursor=pointer]:
+            - checkbox "Seans bitince otomatik olarak sonrakini başlat" [ref=e71]
+            - generic [ref=e72]: Seans bitince otomatik olarak sonrakini başlat
+    - contentinfo [ref=e73]:
+      - paragraph [ref=e74]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - button "Open Next.js Dev Tools" [ref=e80] [cursor=pointer]:
+    - img [ref=e81]
+  - alert [ref=e84]

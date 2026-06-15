@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - generic [ref=e20]:
+    - banner [ref=e21]:
+      - generic [ref=e22]:
+        - heading "Pomoflow" [level=1] [ref=e23]
+        - paragraph [ref=e24]: Odaklan, mola ver, lofi dinle. Sadece iş.
+    - 'complementary "Reklam alanı: top" [ref=e25]':
+      - generic [ref=e26]: Reklam · top · leaderboard
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e32]: Hazır
+            - generic [ref=e33]: 4 kısa molada 1 uzun mola
+          - generic [ref=e35]: 25:00
+          - generic [ref=e37]:
+            - button "Odaklanmayı başlat" [ref=e38]
+            - button "Kısa mola" [ref=e39]
+            - button "Uzun mola" [ref=e40]
+            - button "Bildirim aç" [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - img [ref=e45]
+            - generic [ref=e47]:
+              - generic [ref=e48]: Lofi radyo
+              - generic [ref=e49]: Yükleniyor…
+            - button "Çal" [disabled] [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e52]: Ses
+            - slider "Ses seviyesi" [ref=e53]: "60"
+            - generic [ref=e54]: "60"
+          - group [ref=e55]:
+            - generic "Farklı bir YouTube video/canlı yayın kullan" [ref=e56] [cursor=pointer]
+        - 'complementary "Reklam alanı: inline" [ref=e57]':
+          - generic [ref=e58]: Reklam · inline · leaderboard
+      - complementary [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - heading "Ayarlar" [level=2] [ref=e62]
+            - paragraph [ref=e63]: Değişiklikler otomatik kaydedilir.
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: Odak süresi (dk)
+              - spinbutton "Odak süresi (dk)" [ref=e67]: "25"
+            - generic [ref=e68]:
+              - generic [ref=e69]: Kısa mola (dk)
+              - spinbutton "Kısa mola (dk)" [ref=e70]: "5"
+            - generic [ref=e71]:
+              - generic [ref=e72]: Uzun mola (dk)
+              - spinbutton "Uzun mola (dk)" [ref=e73]: "15"
+            - generic [ref=e74]:
+              - generic [ref=e75]: Uzun moladan önceki kısa mola sayısı
+              - spinbutton "Uzun moladan önceki kısa mola sayısı" [ref=e76]: "4"
+          - generic [ref=e77] [cursor=pointer]:
+            - checkbox "Seans bitince otomatik olarak sonrakini başlat" [ref=e78]
+            - text: Seans bitince otomatik olarak sonrakini başlat
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Yapılacaklar" [level=2] [ref=e81]
+            - generic [ref=e82]: 0 kaldı · 0 tamam
+          - generic [ref=e83]:
+            - textbox "Yeni görev ekle…" [ref=e84]
+            - button "Ekle" [disabled] [ref=e85]
+          - paragraph [ref=e86]: Henüz görev yok. Odaklanma seansı için küçük adımlar ekleyebilirsin.
+        - 'complementary "Reklam alanı: sidebar" [ref=e87]':
+          - generic [ref=e88]: Reklam · sidebar · medium
+    - contentinfo [ref=e89]:
+      - 'complementary "Reklam alanı: footer" [ref=e90]':
+        - generic [ref=e91]: Reklam · footer · leaderboard
+      - paragraph [ref=e92]: Pomoflow · yerel olarak çalışır, verilerin tarayıcında saklanır.
+  - alert [ref=e93]
